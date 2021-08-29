@@ -1,15 +1,15 @@
 <template>
-  <div>Labels.vue
-  <Nav/>
+  <div>
+    <Layout>
+      <p>Labels.vue</p>
+    </Layout>
   </div>
 </template>
 
 <script lang="ts">
-  import Nav from '@/components/Nav.vue'
-export default {
-  name: 'Labels',
-  components:{Nav},
-};
+  export default {
+    name: 'Labels',
+  };
 </script>
 
 <style lang="scss" scoped>
