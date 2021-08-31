@@ -59,6 +59,7 @@
     > .new {
       padding-top: 16px;
       button {
+        display: flex;
         background: transparent;
         border: none;
         color: #999;
