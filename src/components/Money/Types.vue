@@ -1,33 +1,27 @@
 <template>
   <div>
     <ul class="types">
-      <li :class="type === '_' && 'selected'" @click="selecType('_')" >支出</li>
+      <li :class="type === '_' && 'selected'" @click="selecType('_')">支出</li>
       <li :class="type === '+' && 'selected'" @click="selecType('+')">收入</li>
     </ul>
   </div>
 </template>
 
-<script >
-  export default {
-    name: 'Types',
-    props: ['xxx'],
-    data() {
-      return{
-        type: '_'
+<script lang="ts">
+  import Vue from 'vue';
+  import {Component} from 'vue-property-decorator';
+
+  @Component
+  export default class Types extends Vue {
+    type = '_';
+
+    selecType(type: string) {
+      if (type !== '_' && type !== '+') {
+        throw new Error('type is unknown');
       }
-    },
-    mounted() {
-      console.log(this.xxx)
-    },
-    methods:{
-      selecType(type){
-        if(type !== '_' && type !== '+'){
-          throw new Error('type is unknown')
-        }
-        this.type=type
-      }
+      this.type = type;
     }
-  };
+  }
 </script>
 
 <style lang="scss" scoped>
@@ -36,6 +30,7 @@
     display: flex;
     text-align: center;
     font-size: 24px;
+
     > li {
       width: 50%;
       height: 64px;
@@ -43,6 +38,7 @@
       justify-content: center;
       align-items: center;
       position: relative;
+
       &.selected::after {
         content: '';
         position: absolute;
