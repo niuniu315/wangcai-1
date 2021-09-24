@@ -33,8 +33,8 @@
       const input = button.textContent!;
       // !可以改写成 as string 意思是把空排除 其它保留，后面不会是空，不要提示我为空
       if (this.output.length === 16) { return;}
-      if(this.output === '0') {
-        if('0123456789'.indexOf(input) >= 0) {
+      if (this.output === '0') {
+        if ('0123456789'.indexOf(input) >= 0) {
 // 你输入的东西在0123456789里面的索引
           this.output = input;
         } else {
@@ -42,21 +42,24 @@
         }
         return;
       }
-      if(this.output.indexOf('.') >= 0 && input === '.') { return;}
+      if (this.output.indexOf('.') >= 0 && input === '.') { return;}
       this.output += input;
     }
+
     remove() {
-      if(this.output.length === 1){
-        this.output = '0'
+      if (this.output.length === 1) {
+        this.output = '0';
       } else {
         this.output = this.output.slice(0, -1);
       }
     }
-    clear(){
+
+    clear() {
       this.output = '0';
     }
-    ok(){
 
+    ok() {
+      this.$emit('update:value', this.output);
     }
   }
 </script>
