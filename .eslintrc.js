@@ -25,11 +25,7 @@ module.exports = {
       files: [
         '**/__tests__/*.{j,t}s?(x)',
         '**/tests/unit/**/*.spec.{j,t}s?(x)',
-        "*.ts", "*.tsx"
       ],
-      "rules": {
-        "@typescript-eslint/explicit-function-return-type": ["error"]
-      },
       env: {
         jest: true
       }
