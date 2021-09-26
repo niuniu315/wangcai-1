@@ -1,7 +1,15 @@
 <template>
   <div>
     <Layout>
-      <p>Labels.vue</p>
+      <ol>
+        <li>衣 <Icon name="right"/></li>
+        <li>食</li>
+        <li>住</li>
+        <li>行</li>
+      </ol>
+      <div>
+        <button>新建标签</button>
+      </div>
     </Layout>
   </div>
 </template>
