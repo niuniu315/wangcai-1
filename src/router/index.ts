@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import Money from '@/views/Money.vue'
+import Money from '@/views/Money.vue';
 import Labels from '@/views/Labels.vue';
 import Statistics from '@/views/Statistics.vue';
-import NotFound from'@/views/NotFound.vue';
-import EditLabel from '@/views/EditLable.vue'
+import NotFound from '@/views/NotFound.vue';
+import EditLabel from '@/views/EditLable.vue';
 
 Vue.use(VueRouter);
 
@@ -28,7 +28,7 @@ const routes = [
     component: Statistics
   },
   {
-    path: '/labels/edit',
+    path: '/labels/edit/:id',
     component: EditLabel
   },
 

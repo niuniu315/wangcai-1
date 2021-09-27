@@ -1,11 +1,28 @@
 <template>
-  <div>编辑标签</div>
+  <Layout>编辑标签</Layout>
 </template>
 
 <script lang="ts">
-  export default {
-    name: ''
-  };
+  import Vue from 'vue';
+  import {Component} from 'vue-property-decorator';
+  import tagListModel from '@/models/tagListModel';
+
+  @Component
+  export default class EditLable extends Vue {
+    //用钩子获取路由
+    created() {
+      const id = this.$route.params.id;
+      tagListModel.fetch();
+      const tags = tagListModel.data;
+      const tag = tags.filter(t => t.id === id)[0];
+      if (tag) {
+        console.log(tag);
+      } else {
+        this.$router.replace('/404');
+        // replace 可以回退
+      }
+    }
+  }
 </script>
 
 <style lang="scss" scoped>
