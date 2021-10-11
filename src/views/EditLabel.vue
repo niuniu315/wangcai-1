@@ -8,6 +8,7 @@
       </span>
     </div>
     <FormItem field-name="标签名" placeholder="请输入标签名"/>
+    <Button>删除标签</Button>
   </Layout>
 </template>
 
@@ -16,10 +17,11 @@
   import {Component} from 'vue-property-decorator';
   import tagListModel from '@/models/tagListModel';
   import FormItem from '@/components/Money/FormItem.vue';
+  import Button from '@/components/Button.vue';
   @Component({
-    components: {FormItem}
+    components: {Button, FormItem}
   })
-  export default class EditLable extends Vue {
+  export default class EditLabel extends Vue {
     //用钩子获取路由
     created() {
       const id = this.$route.params.id;
