@@ -14,23 +14,8 @@
     color: #333;
     font-family: $font-hei;
     line-height: 1.5;
+    background: #f5f5f5;
+    font-size: 16px;
   }
 
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2C3E50;
-  }
-  #nav {
-    padding: 30px;
-    a {
-      font-weight: bold;
-      color: #2C3E50;
-      &.router-link-exact-active {
-        color: #42B983;
-      }
-    }
-  }
 </style>

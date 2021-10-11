@@ -7,6 +7,7 @@
         <span>{{ tag.name }}</span>
         <Icon name="right"/>
       </router-link>
+      <!-- router-link 后面需要接to -->
     </div>
     <div class="createTag-wrapper">
       <button class="createTag" @click="createTag">新建标签</button>
@@ -28,6 +29,7 @@
       const name = window.prompt('请输入标签名');
       if (name) {
         const message = tagListModel.create(name);
+
         // 如果报错的信息是duplicated（重复了）
         if (message === 'duplicated') {
           window.alert('标签名重复了');

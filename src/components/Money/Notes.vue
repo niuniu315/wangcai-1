@@ -18,7 +18,7 @@
   export default class Notes extends Vue {
     value = '';
     @Prop({required: true}) fieldName!: string;
-    @Prop() placeholder!: string;
+    @Prop() placeholder?: string;
 
     @Watch('value')
     onValueChanged(value: string) {
@@ -35,11 +35,9 @@
     padding-left: 16px;
     display: flex;
     align-items: center;
-
     .name {
       padding-right: 16px;
     }
-
     input {
       height: 64px;
       flex-grow: 1;
