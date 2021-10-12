@@ -11,7 +11,7 @@
     </div>
     <div class="createTag-wrapper">
       <Button class="createTag"
-              @click.native="createTag">新建标签
+              @click="createTag">新建标签
       </Button>
     </div>
   </Layout>
@@ -28,6 +28,7 @@
     tags = tagListModel.data;
 
     createTag() {
+      console.log(1)
       const name = window.prompt('请输入标签名');
       if (name) {
         const message = tagListModel.create(name);
