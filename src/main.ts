@@ -15,7 +15,7 @@ Vue.component('Nav', Nav);
 Vue.component('Layout',Layout);
 Vue.component('Icon',Icon)
 
-// @ts-ignore
+
 window.tagList = tagListModel.fetch()
 
 new Vue({

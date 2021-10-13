@@ -13,13 +13,12 @@ type Tag = {
 type TagListModel = {
   data: Tag[]
   fetch: () => Tag[]
-  create: (name: string) => 'success' | 'duplicated'
-  // 联合类型  ：success 表示成功 duplicated表示重复
+  create: (name: string) => 'success' | 'duplicated' // 联合类型
   update: (id: string, name: string) => 'success' | 'not found' | 'duplicated'
   remove: (id: string) => boolean
   save: () => void
 }
 
-interface window{
+interface Window {
   tagList: Tag[]
 }
