@@ -17,7 +17,7 @@
 
   @Component
   export default class FormItem extends Vue {
-    @Prop({default:''}) value!:string;
+    @Prop({default: ''}) value!: string;
 
 
     @Prop({required: true}) fieldName!: string;
@@ -36,9 +36,11 @@
     padding-left: 16px;
     display: flex;
     align-items: center;
+
     .name {
       padding-right: 16px;
     }
+
     input {
       height: 40px;
       flex-grow: 1;

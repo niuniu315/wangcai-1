@@ -20,8 +20,6 @@
   import {Component} from 'vue-property-decorator';
   import store from '@/store/index2';
 
-
-
   @Component({
     components: {Tags, FormItem, Types, NumberPad}
   })
@@ -42,7 +40,7 @@
     }
 
     saveRecord() {
-      store.createRecord(this.record)
+      store.createRecord(this.record);
     }
 
 
@@ -54,6 +52,7 @@
     display: flex;
     flex-direction: column-reverse;
   }
+
   .notes {
     padding: 12px 0;
   }

@@ -36,7 +36,7 @@
       if (this.output.length === 16) { return;}
       if (this.output === '0') {
         if ('0123456789'.indexOf(input) >= 0) {
-// 你输入的东西在0123456789里面的索引
+          // 你输入的东西在0123456789里面的索引
           this.output = input;
         } else {
           this.output += input;
@@ -61,8 +61,8 @@
 
     ok() {
       this.$emit('update:value', this.output);
-      this.$emit('submit',this.output)
-      this.output = '0'
+      this.$emit('submit', this.output);
+      this.output = '0';
     }
   }
 </script>
