@@ -1,7 +1,7 @@
 <!--编辑标签 -->
 <template>
   <Layout>
-    <div class="navBar" >
+    <div class="navBar">
       <Icon name="left" class="leftIcon" @click="goBack"/>
       <span class="title">编辑标签</span>
       <span class="rightIcon"></span>
@@ -23,35 +23,40 @@
   import tagListModel from '@/models/tagListModel';
   import FormItem from '@/components/Money/FormItem.vue';
   import Button from '@/components/Button.vue';
+  import store from '@/store/index2';
 
   @Component({
     components: {Button, FormItem}
   })
   export default class EditLabel extends Vue {
     tag ?: Tag = undefined;
+
     //用钩子获取路由
     created() {
-      this.tag = window.findTag(this.$route.params.id);
-      if (!this.tag){
+      this.tag = store.findTag(this.$route.params.id);
+      if (!this.tag) {
         this.$router.replace('/404');
         // replace 可以回退
       }
     }
+
     // 更新 编辑标签
-    update(name:string) {
-      if(this.tag){
-        window.updateTag(this.tag.id,name)
+    update(name: string) {
+      if (this.tag) {
+        store.updateTag(this.tag.id, name);
       }
     }
+
     remove() {
       if (this.tag) {
-        if (window.removeTag(this.tag.id)) {
+        if (store.removeTag(this.tag.id)) {
           this.$router.back();
         } else {
           window.alert('删除失败');
         }
       }
     }
+
     goBack() {
       this.$router.back();
     }
@@ -67,22 +72,27 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-      > .title {
-      }
-      > .leftIcon {
-        width: 24px;
-        height: 24px;
-      }
-      > .rightIcon {
-        width: 24px;
-        height: 24px;
+
+    > .title {
+    }
+
+    > .leftIcon {
+      width: 24px;
+      height: 24px;
+    }
+
+    > .rightIcon {
+      width: 24px;
+      height: 24px;
     }
   }
-  .form-wrapper{
+
+  .form-wrapper {
     background: white;
     margin-top: 8px;
   }
-  .button-wrapper{
+
+  .button-wrapper {
     text-align: center;
     padding: 16px;
     margin-top: 44-16px;
