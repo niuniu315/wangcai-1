@@ -1,7 +1,7 @@
 <template>
   <Layout class-prefix="layout">
     <NumberPad :value.sync="record.amount" @submit="saveRecord"/>
-    <Tabs :data-source="createdTypeList"
+    <Tabs :data-source="recordTypeList"
           :value.sync="record.type"/>
     <div class="notes">
       <FormItem field-name="备注"
